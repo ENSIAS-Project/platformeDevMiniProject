@@ -5,7 +5,6 @@
          version="6.0">
     <display-name>Mini projet</display-name>
     
-    <!-- Define the default page -->
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
