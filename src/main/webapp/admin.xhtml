@@ -8,35 +8,34 @@
       xmlns:p="http://primefaces.org/ui">
 <f:view>
     <h:form>
-        <p:dataTable value="#{userController.userList}" var="user" selectionMode="single" selection="#{userController.selectedUser}">
+        <p:dataTable value="#{userController.userList}" var="user"
+                     selectionMode="single"
+                     selection="#{userController.selectedUser}"
+                     rowKey="#{user.id}">
+            <p:column selectionMode="single" />
             <p:column headerText="Nom">#{user.nom}</p:column>
             <p:column headerText="Prénom">#{user.prenom}</p:column>
             <p:column headerText="Solde">#{user.soldeCompte} MAD</p:column>
             <p:column headerText="Actions">
-                <p:commandButton value="Modifier" oncomplete="PF('editDialog').show()" update="editForm" />
+                <p:commandButton value="Modifier" oncomplete="PF('editDialog').show()" update=":editForm" />
                 <p:commandButton value="Supprimer" action="#{userController.deleteUser(user)}" update="@form" />
             </p:column>
         </p:dataTable>
-
         <p:commandButton value="Ajouter un utilisateur" action="addUser.xhtml?faces-redirect=true" />
-
-        <!-- Edit Dialog -->
-        <p:dialog header="Modifier utilisateur" widgetVar="editDialog">
-            <h:form id="editForm">
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Nom :" />
-                    <p:inputText value="#{userController.selectedUser.nom}" />
-
-                    <h:outputLabel value="Prénom :" />
-                    <p:inputText value="#{userController.selectedUser.prenom}" />
-
-                    <h:outputLabel value="Solde :" />
-                    <p:inputText value="#{userController.selectedUser.soldeCompte}" />
-
-                    <p:commandButton value="Sauvegarder" action="#{userController.editUser()}" oncomplete="PF('editDialog').hide()" update="@form" />
-                </h:panelGrid>
-            </h:form>
-        </p:dialog>
     </h:form>
+    <!-- Edit Dialog -->
+    <p:dialog header="Modifier utilisateur" widgetVar="editDialog">
+        <h:form id="editForm">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nom :" />
+                <p:inputText value="#{userController.selectedUser.nom}" />
+                <h:outputLabel value="Prénom :" />
+                <p:inputText value="#{userController.selectedUser.prenom}" />
+                <h:outputLabel value="Solde :" />
+                <p:inputText value="#{userController.selectedUser.soldeCompte}" />
+                <p:commandButton value="Sauvegarder" action="#{userController.editUser()}" oncomplete="PF('editDialog').hide()" update="@form" />
+            </h:panelGrid>
+        </h:form>
+    </p:dialog>
 </f:view>
 </html>

@@ -11,12 +11,10 @@
       <p:messages />
       <h:panelGrid columns="2">
          <h:outputLabel value="Nom d'utilisateur :" />
-         <p:inputText value="#{authController.username}" />
-
+         <p:inputText value="#{loginController.username}" />
          <h:outputLabel value="Mot de passe :" />
-         <p:password value="#{authController.password}" />
-
-         <p:commandButton value="Se connecter" action="#{authController.login()}" />
+         <p:password value="#{loginController.password}" />
+         <p:commandButton value="Se connecter" action="#{loginController.login()}" />
       </h:panelGrid>
    </p:panel>
 </h:form>

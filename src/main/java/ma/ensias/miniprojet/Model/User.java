@@ -7,10 +7,29 @@ import java.time.LocalDate;
 //@Table(name = "users")
 public class User implements Serializable {
 
+    public User() {
+    }
+
+    public User(long id,String Username, String Password,String nom, String prenom, LocalDate dateNaissance, Double soldeCompte, String adresse, String ville, String codePostal, String pays, String role) {
+        this.id = id;
+        this.Username = Username;
+        this.password = Password;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.soldeCompte = soldeCompte;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.pays = pays;
+        this.role = role;
+    }
+
     //@Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String Username;
+    private String password;
     private String nom;
     private String prenom;
 
@@ -103,4 +122,21 @@ public class User implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
+
