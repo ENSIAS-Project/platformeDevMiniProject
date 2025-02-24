@@ -1,4 +1,4 @@
-package ma.ensias.miniprojet;
+package ma.ensias.miniprojet.Beans;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
