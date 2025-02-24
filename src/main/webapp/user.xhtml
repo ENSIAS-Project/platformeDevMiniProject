@@ -14,30 +14,30 @@
       <p:panel header="Informations de l'utilisateur">
          <h:panelGrid columns="2" cellpadding="5">
             <h:outputLabel value="Nom :" />
-            <h:outputText value="#{userController.selectedUser.nom}" />
+            <h:outputText value="#{userController.loggedUser.nom}" />
 
             <h:outputLabel value="Prénom :" />
-            <h:outputText value="#{userController.selectedUser.prenom}" />
+            <h:outputText value="#{userController.loggedUser.prenom}" />
 
             <h:outputLabel value="Date de Naissance :" />
-            <h:outputText value="#{userController.selectedUser.dateNaissance}">
+            <h:outputText value="#{userController.loggedUser.dateNaissance}">
                <f:convertDateTime pattern="dd/MM/yyyy" />
             </h:outputText>
 
             <h:outputLabel value="Solde de compte :" />
-            <h:outputText value="#{userController.selectedUser.soldeCompte} MAD" />
+            <h:outputText value="#{userController.loggedUser.soldeCompte} MAD" />
 
             <h:outputLabel value="Adresse :" />
-            <h:outputText value="#{userController.selectedUser.adresse}" />
+            <h:outputText value="#{userController.loggedUser.adresse}" />
 
             <h:outputLabel value="Ville :" />
-            <h:outputText value="#{userController.selectedUser.ville}" />
+            <h:outputText value="#{userController.loggedUser.ville}" />
 
             <h:outputLabel value="Code Postal :" />
-            <h:outputText value="#{userController.selectedUser.codePostal}" />
+            <h:outputText value="#{userController.loggedUser.codePostal}" />
 
             <h:outputLabel value="Pays :" />
-            <h:outputText value="#{userController.selectedUser.pays}" />
+            <h:outputText value="#{userController.loggedUser.pays}" />
          </h:panelGrid>
       </p:panel>
 

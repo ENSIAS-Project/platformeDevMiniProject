@@ -7,6 +7,7 @@ import ma.ensias.miniprojet.Model.User;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 @SessionScoped
@@ -16,8 +17,8 @@ public class FakeUserService implements Serializable,UserService {
   User loggedUser;
   public FakeUserService(){
     users = new ArrayList<>();
-    users.add(new User(1,"anas","elb","anas","el bouziyani", LocalDate.of(1996,07,02),2000.0,"n21 av riad","FES","50000","MAROC","ADMIN"));
-    users.add(new User(2,"test","test","anas","el bouziyani", LocalDate.of(1996,07,02),2000.0,"n21 av riad","FES","50000","MAROC","USER"));
+    users.add(new User(1,"anas","elb","anas","el bouziyani", Calendar.getInstance().getTime(),2000.0,"n21 av riad","FES","50000","MAROC","ADMIN"));
+    users.add(new User(2,"test","test","anas","el bouziyani", Calendar.getInstance().getTime(),2000.0,"n21 av riad","FES","50000","MAROC","USER"));
   }
 
     @Override

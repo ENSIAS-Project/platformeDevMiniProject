@@ -2,6 +2,7 @@ package ma.ensias.miniprojet.Model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 //@Entity
 //@Table(name = "users")
@@ -10,7 +11,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(long id,String Username, String Password,String nom, String prenom, LocalDate dateNaissance, Double soldeCompte, String adresse, String ville, String codePostal, String pays, String role) {
+    public User(long id,String Username, String Password,String nom, String prenom, Date dateNaissance, Double soldeCompte, String adresse, String ville, String codePostal, String pays, String role) {
         this.id = id;
         this.Username = Username;
         this.password = Password;
@@ -34,7 +35,7 @@ public class User implements Serializable {
     private String prenom;
 
     //@Temporal(TemporalType.DATE)
-    private LocalDate dateNaissance;
+    private Date dateNaissance;
 
     private Double soldeCompte;
     private String adresse;
@@ -55,7 +56,7 @@ public class User implements Serializable {
         return prenom;
     }
 
-    public LocalDate getDateNaissance() {
+    public Date getDateNaissance() {
         return dateNaissance;
     }
 
@@ -95,7 +96,7 @@ public class User implements Serializable {
         this.prenom = prenom;
     }
 
-    public void setDateNaissance(LocalDate dateNaissance) {
+    public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 

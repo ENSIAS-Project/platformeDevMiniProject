@@ -43,6 +43,10 @@ public class UserController implements Serializable {
         this.selectedUser = selectedUser;
     }
 
+    public Object getLoggedUser() {
+        return userService.getLoggedUser();
+    }
+
     // Getters and Setters
 
 }
