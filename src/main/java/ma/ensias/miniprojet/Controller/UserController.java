@@ -1,6 +1,5 @@
 package ma.ensias.miniprojet.Controller;
 
-import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -29,8 +28,6 @@ public class UserController implements Serializable {
 
     }
 
-
-
     public List<User> getUserList() {
         return userService.getAllUsers();
     }
@@ -46,7 +43,4 @@ public class UserController implements Serializable {
     public Object getLoggedUser() {
         return userService.getLoggedUser();
     }
-
-    // Getters and Setters
-
 }
