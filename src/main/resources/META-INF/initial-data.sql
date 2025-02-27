@@ -1,0 +1,1 @@
+INSERT INTO users ( dateNaissance, soldeCompte, adresse, codePostal, nom, password, pays, prenom, role, username, ville)VALUES ( '1990-05-15', 1500.75, '123 Main St', '10001', 'Doe', 'password123', 'USA', 'John', 'USER', 'jdoe', 'New York' );

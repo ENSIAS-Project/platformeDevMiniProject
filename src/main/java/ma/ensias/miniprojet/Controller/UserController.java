@@ -4,6 +4,8 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import ma.ensias.miniprojet.Model.User;
+import ma.ensias.miniprojet.Service.Db;
+import ma.ensias.miniprojet.Service.Fake;
 import ma.ensias.miniprojet.Service.UserService;
 
 import java.io.Serializable;
@@ -16,6 +18,8 @@ public class UserController implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Inject
+    //@Fake
+    @Db
     private UserService userService;
     private User selectedUser;
     private User newUser = new User();

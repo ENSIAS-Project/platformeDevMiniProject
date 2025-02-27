@@ -1,19 +1,20 @@
 package ma.ensias.miniprojet.Model;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 
-//@Entity
-//@Table(name = "users")
+@Entity
+@Table(name = "users")
 public class User implements Serializable {
 
     public User() {
     }
 
-    public User(long id,String Username, String Password,String nom, String prenom, Date dateNaissance, Double soldeCompte, String adresse, String ville, String codePostal, String pays, String role) {
+    public User(long id,String username, String Password,String nom, String prenom, Date dateNaissance, Double soldeCompte, String adresse, String ville, String codePostal, String pays, String role) {
         this.id = id;
-        this.Username = Username;
+        this.username = username;
         this.password = Password;
         this.nom = nom;
         this.prenom = prenom;
@@ -26,15 +27,15 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Username;
+    private String username;
     private String password;
     private String nom;
     private String prenom;
 
-    //@Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     private Date dateNaissance;
 
     private Double soldeCompte;
@@ -125,11 +126,11 @@ public class User implements Serializable {
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getPassword() {

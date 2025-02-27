@@ -5,11 +5,11 @@ import ma.ensias.miniprojet.Exceptions.UserNotFoundException;
 import ma.ensias.miniprojet.Model.User;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+@Fake
 @SessionScoped
 public class FakeUserService implements Serializable,UserService {
 

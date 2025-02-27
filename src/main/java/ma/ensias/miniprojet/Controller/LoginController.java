@@ -6,6 +6,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import ma.ensias.miniprojet.Exceptions.UserNotFoundException;
 import ma.ensias.miniprojet.Model.User;
+import ma.ensias.miniprojet.Service.Db;
 import ma.ensias.miniprojet.Service.UserService;
 
 import java.io.Serializable;
@@ -16,10 +17,12 @@ public class LoginController implements Serializable {
     private String username;
     private String password;
     @Inject
+    //@Fake
+    @Db
     UserService us;
 
     public String login() {
-        User mUser= null;
+        User mUser;
         try {
             mUser = us.authenticate(username,password);
             if(mUser.getRole().equals("ADMIN")){
