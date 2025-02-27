@@ -18,6 +18,7 @@ public class UserController implements Serializable {
     @Inject
     private UserService userService;
     private User selectedUser;
+    private User newUser = new User();
 
 
     public void deleteUser(User user) {
@@ -40,7 +41,20 @@ public class UserController implements Serializable {
         this.selectedUser = selectedUser;
     }
 
+    public User getNewUser() {
+        return newUser;
+    }
+
+    public void setNewUser(User newUser) {
+        this.newUser = newUser;
+    }
+
     public Object getLoggedUser() {
         return userService.getLoggedUser();
+    }
+
+    public void addUser() {
+        System.out.println("addUser() method called!");
+        userService.addUser(newUser);
     }
 }

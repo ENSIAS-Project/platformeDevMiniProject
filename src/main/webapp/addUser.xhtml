@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Add User</title>
+      <h:outputStylesheet name="css/primeflex3.css" library="showcase"/>
+</h:head>
+<h:body>
+   <h:form>
+      <p:panel header="Add User">
+         <p:outputLabel for="login" value="login:"/>
+         <p:inputText id="login" value="#{userController.newUser.username}" required="true"/>
+         <br/>
+         <p:outputLabel for="password" value="password:"/>
+         <p:inputText id="password" value="#{userController.newUser.password}" required="true"/>  <br/>
+         <p:outputLabel for="firstName" value="First Name:"/>
+         <p:inputText id="firstName" value="#{userController.newUser.nom}" required="true"/>  <br/>
+         <p:outputLabel for="lastName" value="Last Name:"/>
+         <p:inputText id="lastName" value="#{userController.newUser.prenom}" required="true"/>  <br/>
+         <p:outputLabel for="birthDate" value="Birth Date:"/>
+         <p:datePicker id="birthDate" value="#{userController.newUser.dateNaissance}" pattern="dd/MM/yyyy" required="true"/> <br/>
+         <p:outputLabel for="accountBalance" value="Account Balance:"/>
+         <p:inputText id="accountBalance" value="#{userController.newUser.soldeCompte}" required="true"/>  <br/>
+         <p:outputLabel for="address" value="Address:"/>
+         <p:inputText id="address" value="#{userController.newUser.adresse}" required="true"/>  <br/>
+         <p:outputLabel for="city" value="City:"/>
+         <p:inputText id="city" value="#{userController.newUser.ville}" required="true"/>  <br/>
+         <p:outputLabel for="postalCode" value="Postal Code:"/>
+         <p:inputText id="postalCode" value="#{userController.newUser.codePostal}" required="true"/>  <br/>
+         <p:outputLabel for="country" value="Country:"/>
+         <p:inputText id="country" value="#{userController.newUser.pays}" required="true"/>  <br/>
+         <p:commandButton value="Add" action="#{userController.addUser()}"  update="@form"/>
+         <p:commandButton value="retourner" action="admin.xhtml?faces-redirect=true"  update="@form"/>
+      </p:panel>
+   </h:form>
+</h:body>
+</html>
